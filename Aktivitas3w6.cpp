@@ -5,8 +5,7 @@ using namespace std;
 struct Mahasiswa {
 	string nama;
 	int umur;
-	string nik;
-	};
+	string nik;};
 int main() {
 	const int jumlahMahasiswa = 100;
 	Mahasiswa mhs[jumlahMahasiswa];
@@ -14,14 +13,12 @@ int main() {
 	ifstream inputFile("mahasiswa.txt");
 	if (!inputFile) {
 	cerr << "Tidak dapat membuka file!" << endl;
-	return 1;
-	}
+	return 1;}
 	string line;
 	while (getline(inputFile, line) && count < jumlahMahasiswa) {
 	stringstream ss(line);
 	ss >> mhs[count].nama >> mhs[count].umur >> mhs[count].nik;
-	count++;
-	}
+	count++;}
 	inputFile.close();
 	cout << "Data Mahasiswa:" << endl;
 	for (int i = 0; i < count; i++) {
@@ -29,7 +26,5 @@ int main() {
 		cout << "Nama: " << mhs[i].nama << endl;
 		cout << "Umur: " << mhs[i].umur << endl;
 		cout << "NIK: " << mhs[i].nik << endl;
-		cout << endl; // Baris kosong untuk pemisah
-		}
-	return 0;
-}
+		cout << endl; }
+	return 0;}
